@@ -15,6 +15,7 @@ public class InsertElement {
     for (int i : insert(arr, index, value)) {
       System.out.println(i);
     }
+    sc.close();
   }
 
   private static int[] insert(int[] arr, int index, int value) {
