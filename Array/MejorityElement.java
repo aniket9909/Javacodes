@@ -1,38 +1,16 @@
 package Array;
 
+// Write a program  to find the majority element of an array ?
 import java.util.*;
 
 public class MejorityElement {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    int[] arr = { 45, 58, 45, 78, 78, 78, 78, 78, 54, 54, 54, 56, 56, 59, 59, 95, 45, 48, 48, 48, 56, 52, 52, 2, 6, 3,
-        5, 2, 6, 252, 6, 3, 56, 48, 48, 48 };
+    int[] arr = { 12, 4, 3, 6, 87, 54, 21, 54, 87, 9, 4, 3, 4, 6, 97, 5, 13, 1, 6, 97, 4, 6, 31, 64, 97, 97, 964, 31, 3,
+        164, 97, 97, 6, 13, 1, 64, 97, 7, 94, 1, 3, 16, 79, 79 };
     System.out.println("Most Repeted Number = " + getCountArr(arr));
-    // System.out.println(major(arr));
+    majorElement(arr);
   }
-
-  // private static int major(int[] arr) {
-  // if (arr.length > 1) {
-  // int count = 0, length = 0, result = 0;
-  // for (int i = 0; i < arr.length - 1; i++) {
-  // for (int j = i + 1; j < arr.length; j++) {
-  // if (arr[i] == arr[j]) {
-  // count++;
-  // }
-  // }
-  // if (count > length) {
-  // length = count;
-  // result = arr[i];
-
-  // }
-  // count = 0;
-  // }
-  // return result;
-  // } else {
-  // return arr[0];
-  // }
-
-  // }
 
   public static int getCountArr(int[] array) {
     int count = 0, temp = 0, position = 0;
@@ -44,7 +22,6 @@ public class MejorityElement {
             count++;
           }
         }
-
         if (temp < count) {
           position = array[i];
           temp = count;
@@ -54,6 +31,27 @@ public class MejorityElement {
     } else {
       return array[0];
     }
-
   }
+
+  // A majority element in an array A[] of size n is an element that appears more
+  // than n/2 times (and
+  // hence there is at most one such element).
+  public static void majorElement(int[] arr) {
+    int count = 0, temp = 0, element = 0;
+    for (int i = 0; i < arr.length; i++) {
+      count = 0;
+      for (int j = i + 1; j < arr.length; j++) {
+
+        if (arr[i] == arr[j]) {
+          count++;
+        }
+      }
+      if (temp < count) {
+        temp = count;
+        element = arr[i];
+      }
+    }
+    System.out.println(element);
+  }
+
 }

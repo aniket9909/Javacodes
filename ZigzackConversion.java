@@ -7,14 +7,13 @@ public class ZigzackConversion {
         System.out.print(str.charAt(count));
         count++;
       }
-
       System.out.println();
     }
   }
 
   public static void main(String[] args) {
     String str = "PAYPALISHIRING";
-    int row = 3;
+    int row = 2;
     conversion(str, row);
   }
 }

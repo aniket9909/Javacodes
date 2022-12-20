@@ -69,14 +69,15 @@ package Array;
 public class SecondLargest {
 
   public static void main(String[] args) {
-    int[] arr = { 10, 10, 1, 9, 8 };
-    int largest = 0, secondLargest = 0;
+    int[] arr = { 0, -1, -2, -3 };
+    int largest = Integer.MIN_VALUE, secondLargest = Integer.MIN_VALUE;
     for (int i = 0; i < arr.length; i++) {
       if (arr[i] > largest) {
         secondLargest = largest;
         largest = arr[i];
       }
-      if (secondLargest > arr[i] && arr[i] < largest) {
+      if (secondLargest < arr[i] && arr[i] < largest) {
+        System.out.println(secondLargest);
         secondLargest = arr[i];
       }
     }
